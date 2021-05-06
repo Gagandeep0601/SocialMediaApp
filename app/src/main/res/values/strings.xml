@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SocialMediaApp</string>
+    <string name="register">Register</string>
+    <string name="enter_you_email">Enter you email</string>
+    <string name="registerButton">Register</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="profile">Profile</string>
 </resources>
