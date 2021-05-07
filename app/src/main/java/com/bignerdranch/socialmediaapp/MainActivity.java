@@ -18,6 +18,20 @@ public class MainActivity extends AppCompatActivity {
         mRegisterButton = findViewById(R.id.register_button);
         mSignInButton = findViewById(R.id.sign_in);
         registerUser();
+        loginUser();
+    }
+
+    //login the user
+    private void loginUser() {
+        mSignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //start LoginActivity by using intent
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     //register the user

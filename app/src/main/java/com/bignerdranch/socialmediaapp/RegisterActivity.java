@@ -12,6 +12,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity {
     EditText mEmail , mPassword;
     Button mRegisterUser;
+    TextView mAlreadyAccount;
     ProgressDialog mProgress;
     private FirebaseAuth mAuth;   //Declare an instance of firebase
 
@@ -34,11 +36,19 @@ public class RegisterActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
         mRegisterUser = findViewById(R.id.register_button);
+        mAlreadyAccount = findViewById(R.id.alreadyAccount);
         mProgress = new ProgressDialog(RegisterActivity.this);
         mProgress.setMessage("Registering User....");
         mAuth = FirebaseAuth.getInstance();              //initialize firebase instance
         actionBar();
         clickRegisterButton();
+        //handle login TextView click listener
+        mAlreadyAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));  // jump to LoginActivity
+            }
+        });
     }
     //Register the user
     private void clickRegisterButton() {
@@ -66,7 +76,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void register(String email, String password) {
