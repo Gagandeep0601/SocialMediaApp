@@ -9,4 +9,5 @@
     <string name="Login">Login</string>
     <string name="login_here">Login here</string>
     <string name="not_have_a_account_register">Not have a account? Register</string>
+    <string name="forget_password">Forget Password? Click here to recover </string>
 </resources>

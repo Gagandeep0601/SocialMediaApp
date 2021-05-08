@@ -56,6 +56,12 @@ public class ProfileActivity extends AppCompatActivity {
         super.onStart();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
     private void actionBar() {
         ActionBar actionBar = getSupportActionBar();  //action bar
         actionBar.setTitle("Profile");  //set title of action bar
